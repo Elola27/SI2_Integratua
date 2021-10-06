@@ -1,0 +1,1 @@
+L 2javaX¯hr*src/main/java/gui/MugimenduakIkusiGUI.java

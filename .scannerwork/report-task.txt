@@ -1,0 +1,7 @@
+organization=elola27
+projectKey=SI2
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.23630
+dashboardUrl=https://sonarcloud.io/dashboard?id=SI2
+ceTaskId=AXxH8FnKzrYhS8-BEFcB
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXxH8FnKzrYhS8-BEFcB

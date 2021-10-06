@@ -1,0 +1,90 @@
+
+@gui.MainGUI#getRdbtnNewRadioButton_2()Ljavax/swing/JRadioButton;_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaØ Ø(."3*º
+2_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java±, ±(8ûõ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java± ±(+
+%1javax.swing.JRadioButton"javax.swing.JRadioButton“
+œ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java± ±(9
+%2"4javax.swing.JRadioButton#<init>(Ljava/lang/String;)V* 
+
+%1javax.swing.JRadioButton*
+
+Castellano∂
+≥
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java± ±(9(
+gui.MainGUI"
+rdbtnNewRadioButton_2"__id* 
+
+%1javax.swing.JRadioButton∂
+≥
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java≤ ≤(
+%3javax.swing.JRadioButton"__id***(
+gui.MainGUI"
+rdbtnNewRadioButton_2íè
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java≤/ ≤(=
+%4Lgui/MainGUI$4926;"Lgui/MainGUI$4926;¢
+ü
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java≤+ ∏(
+%5"java.lang.Object#<init>()V*
+
+%4Lgui/MainGUI$4926;≤Ø
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java≤ ∏(
+
+%6void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V* 
+
+%3javax.swing.JRadioButton*
+
+%4Lgui/MainGUI$4926;22addActionListener(Ljava/awt/event/ActionListener;)´
+®
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaπ π(
+%7javax.swing.ButtonGroup"__id* *
+gui.MainGUI"
+buttonGroup∂
+≥
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaπ π((
+%8javax.swing.JRadioButton"__id***(
+gui.MainGUI"
+rdbtnNewRadioButton_2íè
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaπ π()
+
+%9void":javax.swing.ButtonGroup#add(Ljavax/swing/AbstractButton;)V*
+
+%7javax.swing.ButtonGroup* 
+
+%8javax.swing.JRadioButton2!add(Ljavax/swing/AbstractButton;)*
+1*•
+3_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java∞ ∞(∂
+≥
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java∞ ∞(
+%0javax.swing.JRadioButton"__id***(
+gui.MainGUI"
+rdbtnNewRadioButton_2*
+2
+1*•
+1_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaª	 ª(∑
+¥
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaª	 ª(
+%10javax.swing.JRadioButton"__id***(
+gui.MainGUI"
+rdbtnNewRadioButton_2"Ñ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaª ª(!
+
+%10javax.swing.JRadioButtonB
+gui.MainGUI

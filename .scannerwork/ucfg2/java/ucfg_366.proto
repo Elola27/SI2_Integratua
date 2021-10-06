@@ -1,0 +1,33 @@
+
+WbusinessLogic.BLFacadeImplementation#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar  r(."startingBlock*ñ
+startingBlockv
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar. r(9¶
+³
+v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar r(
+%0"
+__annotate*
+	WebMethod*
+
+datejava.util.Date©
+¦
+v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar4 r(8
+datejava.util.Date"__annotation*
+
+%0*
+1*º
+1v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javas s(¤
+¡
+v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javat t(5
+datesjava.util.Vector"__id*
+"""•
+v
+lC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javav v(
+
+datesjava.util.Vector:
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementation

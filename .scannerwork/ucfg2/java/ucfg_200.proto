@@ -1,0 +1,129 @@
+
+0gui.MainGUI#getLblNewLabel()Ljavax/swing/JLabel;_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaå å("3*¯
+2_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé# é(1É
+Ä
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé# é(H
+%1java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
+java.util.ResourceBundle*
+	Etiquetasôñ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé# é(b
+%2java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
+
+%1java.util.ResourceBundle*
+SelectOption2getString(Ljava/lang/String;)íè
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé é("
+%3javax.swing.JLabel"javax.swing.JLabel–
+Õ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé é(c
+%4".javax.swing.JLabel#<init>(Ljava/lang/String;)V*
+
+%3javax.swing.JLabel*
+
+%2java.lang.String≠
+™
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaé é(c%
+gui.MainGUI"
+jLabelSelectOption"__id*
+
+%3javax.swing.JLabel≠
+™
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaè è(
+%5javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption|
+z
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaè1 è(:	
+%6int"__id*
+""àÖ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaè" è(&
+%7java.awt.Font"java.awt.FontÕ
+ 
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaè è(?
+%8"+java.awt.Font#<init>(Ljava/lang/String;II)V*
+
+%7java.awt.Font*
+
+Tahoma*
+	
+%6int*2ÔÏ
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaè è(@
+
+%9void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*
+
+%5javax.swing.JLabel*
+
+%7java.awt.Font2setFont(Ljava/awt/Font;)Æ
+´
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaê ê(
+%10javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOptionâ
+Ü
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaê$ ê(/
+%11java.awt.Color"__id*
+""Å˛
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaê ê(0
+%12void"7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V*
+
+%10javax.swing.JLabel*
+
+%11java.awt.Color2setForeground(Ljava/awt/Color;)Æ
+´
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaë ë(
+%13javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption}
+{
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaë- ë(B
+
+%14int"__id*
+""Ê„
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaë ë(C
+%15void"-javax.swing.JLabel#setHorizontalAlignment(I)V*
+
+%13javax.swing.JLabel*
+
+
+%14int2setHorizontalAlignment(I)*
+1*ú
+3_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaç ç(≠
+™
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaç ç(
+%0javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption*
+2
+1*ï
+1_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaì	 ì(Æ
+´
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaì	 ì(
+%16javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption"~
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaì ì(
+
+%16javax.swing.JLabelB
+gui.MainGUI

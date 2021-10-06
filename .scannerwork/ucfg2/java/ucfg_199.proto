@@ -1,0 +1,93 @@
+
+,gui.MainGUI#getBoton3()Ljavax/swing/JButton;]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java| |("3*º
+2]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java~ ~(&íè
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java~ ~($
+%1javax.swing.JButton"javax.swing.JButton§
+°
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java~ ~(&
+%2"javax.swing.JButton#<init>()V*
+
+%1javax.swing.JButton≠
+™
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java~ ~(&&
+gui.MainGUI"
+jButtonQueryQueries"__id*
+
+%1javax.swing.JButton≠
+™
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java (
+%3javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueriesÅ
+˛
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java (D
+%4java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
+java.util.ResourceBundle*
+	Etiquetasóî
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java (^
+%5java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
+
+%4java.util.ResourceBundle*
+QueryQueries2getString(Ljava/lang/String;)˚¯
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java (_
+
+%6void"7javax.swing.AbstractButton#setText(Ljava/lang/String;)V*
+
+%3javax.swing.JButton*
+
+%5java.lang.String2setText(Ljava/lang/String;)Ø
+¨
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ä(
+%7javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueriesíè
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ- Ä(J
+%8Lgui/MainGUI$3134;"Lgui/MainGUI$3134;¢
+ü
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ) Ü(
+%9"java.lang.Object#<init>()V*
+
+%8Lgui/MainGUI$3134;Æ´
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ü(
+%10void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*
+
+%7javax.swing.JButton*
+
+%8Lgui/MainGUI$3134;22addActionListener(Ljava/awt/event/ActionListener;)*
+1*ö
+3]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java} }(≠
+™
+]
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.java} }(
+%0javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueries*
+2
+1*ò
+1_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaà	 à(∞
+≠
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaà	 à(
+%11javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueries"
+_
+SC:/Users/user/Desktop/SIPROIEKTUA/FINAL/Bets21Azkena/src/main/java/gui/MainGUI.javaà à(
+
+%11javax.swing.JButtonB
+gui.MainGUI
