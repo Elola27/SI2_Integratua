@@ -137,7 +137,7 @@ public class DeleteApustuaIntegrazioa {
 		           System.out.println("Finally "+b);          
 		        }
 		   }
-	@Test
+	/*@Test
 	public void testONA() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -175,7 +175,7 @@ public class DeleteApustuaIntegrazioa {
 			testBL.removeEvent(ev);
 			//testBL.removeApustua(apu);
 		}
-	}
+	}*/
 	
 	
 }

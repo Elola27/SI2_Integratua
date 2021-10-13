@@ -44,7 +44,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 	private JLabel invalid_1;
 	private JLabel invalid_2;
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
-	
+
 
 	/**
 	 * Launch the application.
@@ -160,6 +160,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 		contentPane.add(batetik);
 		batetik.setVisible(false);
 		
+		
 		gorde = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Save")); //$NON-NLS-1$ //$NON-NLS-2$
 		gorde.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -186,6 +187,12 @@ public class EzarpenakAldatuGUI extends JFrame {
 					}
 				}
 				if(ondo) {
+					String mota;
+					if(publikoa.isSelected()) {
+						mota=ResourceBundle.getBundle("Etiquetas").getString("Public");
+					}else {
+						mota=ResourceBundle.getBundle("Etiquetas").getString("Private");
+					}
 					BLFacade facade=MainGUI.getBusinessLogic();
 					bezeroa = facade.eguneratuEzarpenak(bezeroa, komisioBerria, publikoa.isSelected());
 					editatu.setVisible(true);

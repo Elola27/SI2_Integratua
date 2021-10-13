@@ -39,7 +39,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 	private JLabel irabazia;
 	private JLabel etekina;
 	private JComboBox<Bezeroa> comboBox;
-	private DefaultComboBoxModel<Bezeroa> bezeroakModel = new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<Bezeroa> bezeroakModel = new DefaultComboBoxModel<Bezeroa>();
 	private JButton search;
 	private JLabel erabiltzailerikEz;
 	private Bezeroa selectedBezeroa;
@@ -80,7 +80,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		BLFacade facade=MainGUI.getBusinessLogic();
+		final BLFacade facade=MainGUI.getBusinessLogic();
 		
 		JButton btnClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnClose.addActionListener(new ActionListener() {
@@ -160,7 +160,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		requestButton.setVisible(false);
 		requestButton.setEnabled(false);
 		
-		comboBox = new JComboBox<>();
+		comboBox = new JComboBox<Bezeroa>();
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				selectedBezeroa=((domain.Bezeroa) comboBox.getSelectedItem());

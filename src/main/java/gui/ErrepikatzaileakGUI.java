@@ -174,7 +174,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 			}
 		}	
 		for(ErrepikatuakContainer e:errepikatzaileak) {
-			row=new Vector<>();
+			row=new Vector<Object>();
 			row.add(e.getErrepikapena().getNork().izena);
 			row.add(ResourceBundle.getBundle("Etiquetas").getString("JarraitzaileaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
 			tableModelJarraitzaileak.addRow(row);
@@ -189,7 +189,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 			}
 		}	
 		for(ErrepikatuakContainer e:errepikapenak) {
-			row=new Vector<>();
+			row=new Vector<Object>();
 			row.add(e.getErrepikapena().getNori().izena);
 			row.add(ResourceBundle.getBundle("Etiquetas").getString("JarraituaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
 			

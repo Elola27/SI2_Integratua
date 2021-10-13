@@ -18,7 +18,7 @@ public class BezeroaContainer {
 	
 	public BezeroaContainer() {
 		bezeroa=null;
-		elkarrizketak=new Vector<>();
+		elkarrizketak=new Vector<ArretaElkarrizketa>();
 	}
 
 	public Bezeroa getBezeroa() {

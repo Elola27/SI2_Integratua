@@ -35,8 +35,8 @@ public class GertaeraEzabatuGUI extends JFrame {
 	private LangileaGUI aurrekoa;
 
 
-	private JComboBox<Event> jComboBoxEvents = new JComboBox<>();
-	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<>();
+	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
+	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate")); //$NON-NLS-1$ //$NON-NLS-2$
@@ -48,7 +48,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 	
 	Event selectedEvent;
 	private final JLabel jLabelErrorDate = new JLabel();

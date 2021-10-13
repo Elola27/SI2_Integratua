@@ -45,8 +45,8 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 	private Vector<ArretaMezua> mezuak;
 	private JButton erantzun;
 	
-	private DefaultComboBoxModel<ArretaElkarrizketa> elkarrizketak = new DefaultComboBoxModel<>();
-	JComboBox<Bezeroa> comboBox = new JComboBox<>();
+	private DefaultComboBoxModel<ArretaElkarrizketa> elkarrizketak = new DefaultComboBoxModel<ArretaElkarrizketa>();
+	JComboBox<Bezeroa> comboBox = new JComboBox<Bezeroa>();
 	private JButton mezuraItzuli;
 	private JLabel jakinarazpenak2;
 	private JButton stop;
@@ -169,7 +169,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		btnNewButton.setBounds(169, 11, 299, 31);
 		getContentPane().add(btnNewButton);
 		
-		elkarrizketakConbo = new JComboBox<>();
+		elkarrizketakConbo = new JComboBox<ArretaElkarrizketa>();
 		elkarrizketakConbo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jakinarazpenak.setText("");
@@ -401,7 +401,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 			Vector<Object> row;
 			boolean langileak = false;
 			for(ArretaMezua am : mezuak) {
-				row = new Vector<>();
+				row = new Vector<Object>();
 				row.add(am);
 				if(langileak) {
 					row.add(ResourceBundle.getBundle("Etiquetas").getString("Worker"));

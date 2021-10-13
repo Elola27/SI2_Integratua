@@ -314,7 +314,7 @@ public class DataAccess {
 	 */
 	public Vector<Event> getEvents(Date date) {
 		System.out.println(">> DataAccess: getEvents");
-		Vector<Event> res = new Vector<>();
+		Vector<Event> res = new Vector<Event>();
 		TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.eventDate=?1", Event.class);
 		query.setParameter(1, date);
 		List<Event> events = query.getResultList();
@@ -334,7 +334,7 @@ public class DataAccess {
 	 */
 	public Vector<Date> getEventsMonth(Date date) {
 		System.out.println(">> DataAccess: getEventsMonth");
-		Vector<Date> res = new Vector<>();
+		Vector<Date> res = new Vector<Date>();
 
 		Date firstDayMonthDate = UtilDate.firstDayMonth(date);
 		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
@@ -442,7 +442,7 @@ public class DataAccess {
 	
 	public Vector<Question> getQuestions(Event event) {
 		System.out.println(">> DataAccess: getQuestions");
-		Vector<Question> res = new Vector<>();
+		Vector<Question> res = new Vector<Question>();
 		TypedQuery<Question> query = db.createQuery("SELECT q FROM Question q WHERE q.event=?1", Question.class);
 		query.setParameter(1, event);
 		List<Question> events = query.getResultList();
@@ -500,7 +500,7 @@ public class DataAccess {
 	public Bezeroa apustuaEgin(ArrayList<Pronostikoa> pronostikoak, double a, Bezeroa bezero) {
 		Bezeroa erabiltzaile = db.find(Bezeroa.class, bezero.getErabiltzaileIzena());
 		Pronostikoa pronos;
-		ArrayList<Pronostikoa> pronostikoSorta = new ArrayList<>();
+		ArrayList<Pronostikoa> pronostikoSorta = new ArrayList<Pronostikoa>();
 		for(Pronostikoa p : pronostikoak) {
 			pronos = db.find(Pronostikoa.class, p.getIdentifikadorea());
 			pronostikoSorta.add(pronos);
@@ -591,7 +591,7 @@ public class DataAccess {
 		return erabiltzaile;
 	}
 	
-	public void ezabatuGertaera(Event event) {
+	/*public void ezabatuGertaera(Event event) {
 		Bezeroa bezeroa;
 		int x;
 		Event e = db.find(Event.class, event.getEventNumber());
@@ -630,6 +630,71 @@ public class DataAccess {
 		db.getTransaction().commit();
 		Apustua a = db.find(Apustua.class, 53);
 		System.out.println(a);
+	}*/
+	
+	public void ezabatuGertaera(Event event) {
+		Event e = db.find(Event.class, event.getEventNumber());
+		db.getTransaction().begin();
+		borratuGertaerarenApustuak(e);
+		db.remove(e);
+		db.getTransaction().commit();
+	}
+
+
+	private void borratuGertaerarenApustuak(Event e) {
+		int x;
+		for (Question question : e.getQuestions()) {
+			for (Pronostikoa pronostic : question.getPronostics()) {
+				for (Apustua bet : pronostic.getApustuak()) {
+					x = bet.removePronostikoa(pronostic);
+					if(x==0) {
+						etendakoApustua(bet);
+					}else{
+						apustuaKobratu(bet);
+					}
+				}
+			}
+		}
+	}
+
+
+	private void apustuaKobratu(Apustua bet) {
+		Bezeroa bezeroa;
+		bezeroa = bet.getBezeroa();
+		double komisioa = 0;
+		komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
+		double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
+		bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+	}
+
+
+	private double komisioaOrdaindu(Apustua bet, Bezeroa bezeroa, double komisioa) {
+		if (bet.getErrepikatua()!=null) {
+			Bezeroa bez = bet.getErrepikatua();
+			Errepikapena errepikapen=bezeroa.getErrepikapena(bez);
+			komisioa=(bet.getKopurua()*bet.getKuotaTotala()-bet.getKopurua())*errepikapen.getKomisioa();
+			bez.addMugimendua("Apustu errepikatuaren komisioa ("+bezeroa+")", komisioa,"irabazi");
+		}
+		return komisioa;
+	}
+
+
+	private void etendakoApustua(Apustua bet) {
+		Bezeroa bezeroa;
+		bezeroa=bet.getBezeroa();
+		etendakoErrepikapena(bet, bezeroa);
+		bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
+		bezeroa.removeApustua(bet);
+		db.remove(bet);
+	}
+
+	//Errepikapena eten da eta hilabeteko dirua zuzendu behar da
+	private void etendakoErrepikapena(Apustua bet, Bezeroa bezeroa) {
+		if (bet.getErrepikatua()!=null) {
+			Bezeroa erre=bet.getErrepikatua();
+			Errepikapena er=bezeroa.getErrepikapena(erre);
+			er.eguneratuHilHonetanGeratzenDena(bet.getKopurua());
+		}
 	}
 	
 	public Bezeroa getBezeroa(String ErabiltzaileIzena) {
@@ -644,7 +709,7 @@ public class DataAccess {
 	
 	public Vector<Bezeroa> getBezeroak(String username, Bezeroa bezeroa){
 		Bezeroa erabiltzaile = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
-		Vector<Bezeroa> res = new Vector<>();
+		Vector<Bezeroa> res = new Vector<Bezeroa>();
 		TypedQuery<Bezeroa> query = db.createQuery("SELECT b FROM Bezeroa b", Bezeroa.class);
 		List<Bezeroa> bezeroak = query.getResultList();
 		for (Bezeroa b : bezeroak) {
@@ -726,7 +791,7 @@ public class DataAccess {
 	public Vector<PronostikoaContainer> getPronostikoak(Apustua a){
 		Apustua ap = db.find(Apustua.class, a.getIdentifikadorea());
 		ArrayList<Pronostikoa> pronostikoak = ap.getPronostikoak();
-		Vector<PronostikoaContainer> emaitza = new Vector<>();
+		Vector<PronostikoaContainer> emaitza = new Vector<PronostikoaContainer>();
 		for(Pronostikoa p : pronostikoak) {
 			emaitza.add(new PronostikoaContainer(p));
 		}
@@ -817,7 +882,7 @@ public class DataAccess {
 	}
 	
 	public Vector<Langilea> getLangileak() {
-		Vector<Langilea> langileak = new Vector<>();
+		Vector<Langilea> langileak = new Vector<Langilea>();
 		TypedQuery<Langilea> query = db.createQuery("SELECT l FROM Langilea l", Langilea.class);
 		List<Langilea> list = query.getResultList();
 		for (Langilea l : list) {
@@ -827,7 +892,7 @@ public class DataAccess {
 	}
 	
 	public ArrayList<ErrepikatuakContainer> getErrepikatzaileak(Bezeroa bezeroa) {
-		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<>();
+		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<ErrepikatuakContainer>();
 		Bezeroa erabiltzailea = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
 		Vector<Errepikapena> mezuak = erabiltzailea.getErrepikatzaileak();
 		ErrepikatuakContainer x;
@@ -840,7 +905,7 @@ public class DataAccess {
 	}
 
 	public ArrayList<ErrepikatuakContainer> getErrepikapenak(Bezeroa bezeroa) {
-		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<>();
+		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<ErrepikatuakContainer>();
 		Bezeroa erabiltzailea = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
 		Vector<Errepikapena> mezuak = erabiltzailea.getErrepikatuak();
 		ErrepikatuakContainer x;

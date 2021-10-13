@@ -36,7 +36,7 @@ public class Pronostikoa implements Serializable{
 	private Question question;
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	private Vector<Apustua> apustuak=new Vector<>();
+	private Vector<Apustua> apustuak=new Vector<Apustua>();
 	
 	public Pronostikoa(){
 		super();

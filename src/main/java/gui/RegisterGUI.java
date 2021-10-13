@@ -43,7 +43,7 @@ public class RegisterGUI extends JFrame {
 	private JTextField year;
 	private JTextField phoneNumber;
 	private JComboBox<String> comboBox;
-	private DefaultComboBoxModel<String> hilabeteak= new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<String> hilabeteak= new DefaultComboBoxModel<String>();
 	private LoginGUI lehengoLogin;
 	private MainGUI lehengoMain;
 	private JLabel nameMezua;
@@ -210,7 +210,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(day);
 		day.setColumns(10);
 		
-		comboBox = new JComboBox<>();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(198, 353, 89, 20);
 		comboBox.setModel(hilabeteak);
 		contentPane.add(comboBox);

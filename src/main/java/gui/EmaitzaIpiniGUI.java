@@ -23,8 +23,8 @@ public class EmaitzaIpiniGUI extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 
-	private JComboBox<Event> jComboBoxEvents = new JComboBox<>();
-	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<>();
+	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
+	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
 	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
@@ -36,10 +36,10 @@ public class EmaitzaIpiniGUI extends JFrame {
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 	
 	private JComboBox<Question> jComboBoxQuestions;
-	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<Question>();
 	
 	private JButton jButtonCreate;
 	
@@ -48,8 +48,8 @@ public class EmaitzaIpiniGUI extends JFrame {
 	Pronostikoa selectedPronostic;
 	private final JLabel jLabelSucces = new JLabel();
 	private final JLabel jLabelErrorDate = new JLabel();
-	private final JComboBox<Pronostikoa> jComboBoxPronostics = new JComboBox<>();
-	private DefaultComboBoxModel<Pronostikoa> pronosticModel = new DefaultComboBoxModel<>();
+	private final JComboBox<Pronostikoa> jComboBoxPronostics = new JComboBox<Pronostikoa>();
+	private DefaultComboBoxModel<Pronostikoa> pronosticModel = new DefaultComboBoxModel<Pronostikoa>();
 	
 	public EmaitzaIpiniGUI(LangileaGUI aurrekoa) {
 		try {

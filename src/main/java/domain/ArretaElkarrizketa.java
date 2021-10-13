@@ -35,9 +35,9 @@ public class ArretaElkarrizketa implements Serializable{
 	@XmlIDREF
 	private Langilea langilea;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<ArretaMezua> langileakBidalitakoak=new Vector<>();
+	private Vector<ArretaMezua> langileakBidalitakoak=new Vector<ArretaMezua>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<ArretaMezua> bezeroakBidalitakoak=new Vector<>();
+	private Vector<ArretaMezua> bezeroakBidalitakoak=new Vector<ArretaMezua>();
 	private String gaia;
 	boolean amaituta = false;
 	boolean azkenaBezeroak;
@@ -106,7 +106,7 @@ public class ArretaElkarrizketa implements Serializable{
 	}
 	
 	public Vector<ArretaMezua> getMezuak(){
-		Vector<ArretaMezua> emaitza = new Vector<>();
+		Vector<ArretaMezua> emaitza = new Vector<ArretaMezua>();
 		for(int i = 0; i<bezeroakBidalitakoak.size(); i++) {
 			emaitza.add(bezeroakBidalitakoak.get(i));
 			if(i<langileakBidalitakoak.size()) {

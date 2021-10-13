@@ -1,4 +1,7 @@
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,9 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import configuration.UtilDate;
 import dataAccess.DataAccess;

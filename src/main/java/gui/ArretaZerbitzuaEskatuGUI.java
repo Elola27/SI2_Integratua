@@ -36,7 +36,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 	private JLabel mezuak;
 	private boolean ziur = false;
 	private JTextArea mezuaArea;
-	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<>();
+	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<ArretaElkarrizketa>();
 	
 	
 	/**

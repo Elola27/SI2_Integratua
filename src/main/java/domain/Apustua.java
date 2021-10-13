@@ -34,7 +34,7 @@ public class Apustua implements Serializable{
 	@XmlIDREF
 	private Bezeroa errepikatua;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private ArrayList<Pronostikoa> pronostikoak=new ArrayList<>();
+	private ArrayList<Pronostikoa> pronostikoak=new ArrayList<Pronostikoa>();
 	private Integer pronostikoKop;
 	private Integer asmatutakoKop;
 	private double kuotaTotala;

@@ -23,8 +23,8 @@ public class CreateQuestionGUI extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 
-	private JComboBox<Event> jComboBoxEvents = new JComboBox<>();
-	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<>();
+	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
+	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
 	private JLabel jLabelQuery = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Query"));
@@ -44,7 +44,7 @@ public class CreateQuestionGUI extends JFrame {
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 	
 	public CreateQuestionGUI(Vector<domain.Event> v, AdminGUI aurrekoa) {
 		try {

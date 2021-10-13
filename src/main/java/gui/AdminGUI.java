@@ -109,7 +109,7 @@ public class AdminGUI extends JFrame {
 	
 	public void irekiCreateQuestion() {
 		this.setVisible(false);
-		JFrame a = new CreateQuestionGUI(new Vector<>(), this);
+		JFrame a = new CreateQuestionGUI(new Vector<domain.Event>(), this);
 		a.setVisible(true);
 	}
 	

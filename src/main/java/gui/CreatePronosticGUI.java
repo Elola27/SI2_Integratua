@@ -40,10 +40,10 @@ public class CreatePronosticGUI extends JFrame {
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 
 	private JComboBox<Question> jComboBoxQuestions;
-	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<Question>();
 
 	private JButton jButtonCreate;
 
@@ -139,7 +139,7 @@ public class CreatePronosticGUI extends JFrame {
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 
-		jComboBoxQuestions = new JComboBox<>();
+		jComboBoxQuestions = new JComboBox<Question>();
 		jComboBoxQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");

@@ -18,7 +18,7 @@ public class Langilea extends Pertsona implements Serializable{
 	 * 
 	 */
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<ArretaElkarrizketa> arretaElkarrizketak=new Vector<>();
+	private Vector<ArretaElkarrizketa> arretaElkarrizketak=new Vector<ArretaElkarrizketa>();
 	private int[] balorazioak=new int [5];
 	
 	private static final long serialVersionUID = 1L;

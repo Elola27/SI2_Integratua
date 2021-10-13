@@ -72,7 +72,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
-		DefaultListModel<String> lista = new DefaultListModel<>();
+		DefaultListModel<String> lista = new DefaultListModel<String>();
 		
 		Vector<Mugimendua> bezeroMugimenduak = bezeroa.getMugimenduak(); 
 		if (bezeroMugimenduak.isEmpty()) {
@@ -94,7 +94,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		scrollPane.setBounds(10, 62, 814, 192);
 		contentPane.add(scrollPane);
 		
-		JList<String> list = new JList<>();
+		JList<String> list = new JList<String>();
 		scrollPane.setViewportView(list);
 		list.setModel(lista);
 		

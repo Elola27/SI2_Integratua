@@ -31,7 +31,7 @@ public class FindQuestionsGUI extends JFrame {
 	private JScrollPane scrollPaneEvents = new JScrollPane();
 	private JScrollPane scrollPaneQueries = new JScrollPane();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 
 	private JTable tableEvents= new JTable();
 	private JTable tableQueries = new JTable();
@@ -153,7 +153,7 @@ public class FindQuestionsGUI extends JFrame {
 						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 						else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
 						for (domain.Event ev:events){
-							Vector<Object> row = new Vector<>();
+							Vector<Object> row = new Vector<Object>();
 
 							System.out.println("Events "+ev);
 
@@ -194,7 +194,7 @@ public class FindQuestionsGUI extends JFrame {
 					jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectedEvent")+" "+ev.getDescription());
 
 				for (domain.Question q:queries){
-					Vector<Object> row = new Vector<>();
+					Vector<Object> row = new Vector<Object>();
 
 					row.add(q.getQuestionNumber());
 					row.add(q.getQuestion());

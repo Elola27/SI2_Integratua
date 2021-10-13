@@ -25,8 +25,8 @@ public class ApustuaEginGUI extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 
-	private JComboBox<Event> jComboBoxEvents = new JComboBox<>();
-	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<>();
+	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
+	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
 	private JLabel jLabelListOfEvents = new JLabel();
 	private JLabel jLabelEventDate = new JLabel();
@@ -39,10 +39,10 @@ public class ApustuaEginGUI extends JFrame {
 	private JLabel jLabelError = new JLabel();
 	private JButton addButton;
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<>();
+	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 	
 	private JComboBox<Question> jComboBoxQuestions;
-	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<Question>();
 	
 	private JButton jButtonCreate;
 	
@@ -51,8 +51,8 @@ public class ApustuaEginGUI extends JFrame {
 	Pronostikoa selectedPronostic;
 	private final JLabel jLabelSucces = new JLabel();
 	private final JLabel jLabelErrorDate = new JLabel();
-	private final JComboBox<Pronostikoa> jComboBoxPronostics = new JComboBox<>();
-	private DefaultComboBoxModel<Pronostikoa> pronosticModel = new DefaultComboBoxModel<>();
+	private final JComboBox<Pronostikoa> jComboBoxPronostics = new JComboBox<Pronostikoa>();
+	private DefaultComboBoxModel<Pronostikoa> pronosticModel = new DefaultComboBoxModel<Pronostikoa>();
 	private JTextField textFieldBet;
 	private final JLabel jLabelMinBet = new JLabel(); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel jLabelMsg = new JLabel(); //$NON-NLS-1$ //$NON-NLS-2$
@@ -69,7 +69,7 @@ public class ApustuaEginGUI extends JFrame {
 	};
 	
 	private Integer pronosI;
-	private ArrayList<Pronostikoa> pronostikoak = new ArrayList<>();
+	private ArrayList<Pronostikoa> pronostikoak = new ArrayList<Pronostikoa>();
 	private JLabel pronosticAdded;
 	private JButton quitButton;
 	private final JLabel euro = new JLabel("\u20AC");
@@ -151,7 +151,7 @@ public class ApustuaEginGUI extends JFrame {
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 		
-		jComboBoxQuestions = new JComboBox<>();
+		jComboBoxQuestions = new JComboBox<Question>();
 		jComboBoxQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -332,7 +332,7 @@ public class ApustuaEginGUI extends JFrame {
 					eventDate = UtilDate.trim(eventDate);
 					Date today = new Date();
 					if(eventDate.after(today)) {
-						Vector<Object> row = new Vector<>();
+						Vector<Object> row = new Vector<Object>();
 						row.add(UtilDate.getString(jCalendar.getDate()));
 						row.add(selectedEvent.getDescription());
 						row.add(selectedQuestion.getQuestion());

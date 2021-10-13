@@ -18,7 +18,7 @@ import exceptions.EventAlreadyExist;
 
 public class CreateEventGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
-	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<>();
+	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
 
 	private JTextField jEventDescription = new JTextField();

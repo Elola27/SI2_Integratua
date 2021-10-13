@@ -24,10 +24,10 @@ public class ApostuaEzabatuGUI extends JFrame {
 
 	private JLabel jlabelMsg;
 	private JComboBox<Apustua> comboBox;
-	private DefaultComboBoxModel<Apustua> apustuakModel = new DefaultComboBoxModel<>();
+	private DefaultComboBoxModel<Apustua> apustuakModel = new DefaultComboBoxModel<Apustua>();
 	
 	private Apustua selectedApustua;
-	private Vector<PronostikoaContainer> selectedPronostikoak = new Vector<>();
+	private Vector<PronostikoaContainer> selectedPronostikoak = new Vector<PronostikoaContainer>();
 	private JButton removeButton;
 	private JScrollPane scrollPaneApustua = new JScrollPane();
 	private JTable tableApustua = new JTable();
@@ -88,7 +88,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 		tableApustua.getColumnModel().getColumn(4).setPreferredWidth(5);
 		tableApustua.getColumnModel().getColumn(5).setPreferredWidth(20);
 		
-		comboBox = new JComboBox<>();
+		comboBox = new JComboBox<Apustua>();
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				selectedApustua=((domain.Apustua) comboBox.getSelectedItem());
@@ -107,7 +107,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 					selectedPronostikoak=facade.getPronostikoak(selectedApustua);
 					Vector<Object> row;
 					for(PronostikoaContainer p : selectedPronostikoak){
-						row = new Vector<>();
+						row = new Vector<Object>();
 						row.add(UtilDate.getString(p.getGertaera().getEventDate()));
 						row.add(p.getGertaera());
 						row.add(p.getQuestion());

@@ -113,7 +113,7 @@ public class PuntuazioakIkusiGUI extends JFrame {
 		
 		for(Langilea l: list) {
 			if(l.getBalorazioak().length>0) {
-				row=new Vector<>();
+				row=new Vector<Object>();
 				balorazioak=l.getBalorazioak();
 				row.add(0, l.getIzena());
 				row.add(1, l.getAbizena1());
@@ -127,7 +127,7 @@ public class PuntuazioakIkusiGUI extends JFrame {
 				row.add(9, l.batezBestekoa());
 				tableModelBalorazioak.addRow(row);
 			}else {
-				row=new Vector<>();
+				row=new Vector<Object>();
 				balorazioak=l.getBalorazioak();
 				row.add(0, l.getIzena());
 				row.add(1, l.getAbizena1());

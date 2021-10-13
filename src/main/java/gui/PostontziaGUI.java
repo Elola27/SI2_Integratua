@@ -70,7 +70,7 @@ public class PostontziaGUI extends JFrame {
 	private JRadioButton bost;
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 	private JLabel rate;
-	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<>();
+	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<ArretaElkarrizketa>();
 	
 	public PostontziaGUI(BezeroaGUI aurrekoa, Bezeroa bezeroa) {
 		try {
@@ -725,7 +725,7 @@ public class PostontziaGUI extends JFrame {
 			scrollPaneMezuak.setVisible(true);
 			tableMezua.setVisible(true);
 			for(Mezua m : mezuak) {
-				Vector<Object> row = new Vector<>();
+				Vector<Object> row = new Vector<Object>();
 				row.add(m);
 				if(m instanceof BezeroartekoMezua) {
 					row.add(((BezeroartekoMezua)m).getIgorlea());
