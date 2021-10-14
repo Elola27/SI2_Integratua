@@ -309,12 +309,21 @@ public class BLFacadeImplementation  implements BLFacade {
     	return elkarrizketa;
 	}
 	
+
 	/*@WebMethod public Vector<Bezeroa> lortuEsleitutakoBezeroak(Langilea langilea) {
 		dbManager.open(false);
 		Vector<Bezeroa> bezeroak = dbManager.lortuEsleitutakoBezeroak(langilea);
     	dbManager.close();
     	return bezeroak;
 	}*/
+
+//	@WebMethod public Vector<Bezeroa> lortuEsleitutakoBezeroak(Langilea langilea) {
+//		dbManager.open(false);
+//		Vector<Bezeroa> bezeroak = dbManager.lortuEsleitutakoBezeroak(langilea);
+//    	dbManager.close();
+//    	return bezeroak;
+//	}
+
 	
 	@WebMethod 
 	public ArretaElkarrizketa arretaElkarrizketaSortu(Bezeroa bezeroa, String gaia, String mezua) {

@@ -594,38 +594,32 @@ public class DataAccess {
 	/*public void ezabatuGertaera(Event event) {
 		Bezeroa bezeroa;
 		int x;
+=======
+	public void ezabatuGertaera(Event event) {
+>>>>>>> branch 'master' of https://github.com/Elola27/SI2_Integratua.git
 		Event e = db.find(Event.class, event.getEventNumber());
 		db.getTransaction().begin();
+		borratuGertaerarenApustuak(e);
+		db.remove(e);
+		db.getTransaction().commit();
+	}
+
+
+	private void borratuGertaerarenApustuak(Event e) {
+		int x;
 		for (Question question : e.getQuestions()) {
 			for (Pronostikoa pronostic : question.getPronostics()) {
 				for (Apustua bet : pronostic.getApustuak()) {
 					x = bet.removePronostikoa(pronostic);
 					if(x==0) {
-						bezeroa=bet.getBezeroa();
-						if (bet.getErrepikatua()!=null) {
-							Bezeroa erre=bet.getErrepikatua();
-							Errepikapena er=bezeroa.getErrepikapena(erre);
-							er.eguneratuHilHonetanGeratzenDena(bet.getKopurua());
-						}
-						bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
-						bezeroa.removeApustua(bet);
-						db.remove(bet);
+						etendakoApustua(bet);
 					}else{
-						double komisioa = 0;
-						if (bet.getErrepikatua()!=null) {
-							Bezeroa bez = bet.getErrepikatua();
-							bezeroa = bet.getBezeroa();
-							Errepikapena errepikapen=bezeroa.getErrepikapena(bez);
-							komisioa=(bet.getKopurua()*bet.getKuotaTotala()-bet.getKopurua())*errepikapen.getKomisioa();
-							bez.addMugimendua("Apustu errepikatuaren komisioa ("+bezeroa+")", komisioa,"irabazi");
-						}
-						bezeroa=bet.getBezeroa();
-						double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
-						bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+						apustuaKobratu(bet);
 					}
 				}
 			}
 		}
+<<<<<<< HEAD
 		db.remove(e);
 		db.getTransaction().commit();
 		Apustua a = db.find(Apustua.class, 53);

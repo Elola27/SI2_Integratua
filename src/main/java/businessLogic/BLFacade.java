@@ -146,6 +146,9 @@ public interface BLFacade  {
 	@WebMethod public ArretaElkarrizketa bezeroaEsleitu(Langilea langilea);
 	
 	//@WebMethod public Vector<Bezeroa> lortuEsleitutakoBezeroak(Langilea langilea);
+
+//	@WebMethod public Vector<Bezeroa> lortuEsleitutakoBezeroak(Langilea langilea);
+
 	
 	@WebMethod public ArretaElkarrizketa arretaElkarrizketaSortu(Bezeroa bezeroa, String gaia, String mezua);
 	
