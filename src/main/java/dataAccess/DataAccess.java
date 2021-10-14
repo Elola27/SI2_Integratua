@@ -1,7 +1,6 @@
 package dataAccess;
 
 import java.util.ArrayList;
-//hello
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,6 +40,7 @@ import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.UserAlreadyExist;
 
+//DATU-BASEA
 /**
  * It implements the data access to the objectDb database
  */
