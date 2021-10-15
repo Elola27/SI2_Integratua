@@ -641,25 +641,39 @@ public class DataAccess {
 			for (Pronostikoa pronostic : question.getPronostics()) {
 				for (Apustua bet : pronostic.getApustuak()) {
 					x = bet.removePronostikoa(pronostic);
-					if(x==0) {
-						etendakoApustua(bet);
-					}else{
-						apustuaKobratu(bet);
-					}
+					pronostikoKopBaldintza(x, bet);
 				}
 			}
 		}
 	}
 
 
-	private void apustuaKobratu(Apustua bet) {
+	private void pronostikoKopBaldintza(int x, Apustua bet) {
 		Bezeroa bezeroa;
-		bezeroa = bet.getBezeroa();
-		double komisioa = 0;
-		komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
-		double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
-		bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+		if(x==0) {
+			bezeroa=bet.getBezeroa();
+			etendakoErrepikapena(bet, bezeroa);
+			bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
+			bezeroa.removeApustua(bet);
+			db.remove(bet);
+		}else{
+			bezeroa = bet.getBezeroa();
+			double komisioa = 0;
+			komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
+			double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
+			bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+		}
 	}
+
+
+//	private void apustuaKobratu(Apustua bet) {
+//		Bezeroa bezeroa;
+//		bezeroa = bet.getBezeroa();
+//		double komisioa = 0;
+//		komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
+//		double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
+//		bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+//	}
 
 
 	private double komisioaOrdaindu(Apustua bet, Bezeroa bezeroa, double komisioa) {
@@ -673,14 +687,14 @@ public class DataAccess {
 	}
 
 
-	private void etendakoApustua(Apustua bet) {
-		Bezeroa bezeroa;
-		bezeroa=bet.getBezeroa();
-		etendakoErrepikapena(bet, bezeroa);
-		bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
-		bezeroa.removeApustua(bet);
-		db.remove(bet);
-	}
+//	private void etendakoApustua(Apustua bet) {
+//		Bezeroa bezeroa;
+//		bezeroa=bet.getBezeroa();
+//		etendakoErrepikapena(bet, bezeroa);
+//		bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
+//		bezeroa.removeApustua(bet);
+//		db.remove(bet);
+//	}
 
 	//Errepikapena eten da eta hilabeteko dirua zuzendu behar da
 	private void etendakoErrepikapena(Apustua bet, Bezeroa bezeroa) {
