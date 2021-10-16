@@ -15,6 +15,7 @@ import domain.Langilea;
 import configuration.ConfigXML;
 import domain.Apustua;
 import domain.Bezeroa;
+import domain.DatuErrefaktorizatuERREPIKAPEN;
 import domain.Errepikapena;
 import domain.Event;
 import domain.Pronostikoa;
@@ -247,7 +248,9 @@ public class TestDataAccess {
 		Bezeroa bez2 = db.find(Bezeroa.class, b.getErabiltzaileIzena());
 		db.getTransaction().begin();
 		try {
-			Errepikapena errepikapen = bez.addErrepikatzailea(b, 1.5, 100, 0.2);
+			//Errepikapena errepikapen = bez.addErrepikatzailea(b, 1.5, 100, 0.2);
+			DatuErrefaktorizatuERREPIKAPEN c= new DatuErrefaktorizatuERREPIKAPEN(1.5,100,0.2);
+			Errepikapena errepikapen= bez.addErrepikatzailea(b,c);
 			bez2.addErrepikatua(errepikapen);
 			db.persist(errepikapen);
 			db.getTransaction().commit();
