@@ -28,6 +28,7 @@ import exceptions.EventFinished;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.UserAlreadyExist;
+import domain.DatuErrefaktorizatuERREPIKAPEN;
 
 /**
  * It implements the business logic as a web service.
@@ -278,10 +279,13 @@ public class BLFacadeImplementation  implements BLFacade {
     	return berria;
     }
     
+    
+    //ERREFAKTORIZATU
     @WebMethod 
     public void errepikatu(Bezeroa nork, Bezeroa nori, double apustatukoDena, double hilabetekoMax, double komisioa) {
     	dbManager.open(false);
-    	dbManager.errepikatu(nork, nori, apustatukoDena, hilabetekoMax, komisioa);
+    	DatuErrefaktorizatuERREPIKAPEN a=new DatuErrefaktorizatuERREPIKAPEN(apustatukoDena,hilabetekoMax,komisioa);
+    	dbManager.errepikatu(nork, nori, a);
     	dbManager.close();
     }
 

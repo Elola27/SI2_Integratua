@@ -24,6 +24,7 @@ import domain.ArretaMezua;
 import domain.Bezeroa;
 import domain.BezeroaContainer;
 import domain.BezeroartekoMezua;
+import domain.DatuErrefaktorizatuERREPIKAPEN;
 import domain.Errepikapena;
 import domain.ErrepikatuakContainer;
 import domain.Event;
@@ -649,16 +650,14 @@ public class DataAccess {
 
 
 	private void pronostikoKopBaldintza(int x, Apustua bet) {
-		Bezeroa bezeroa;
+		Bezeroa bezeroa=bet.getBezeroa();
+		double komisioa = 0;
 		if(x==0) {
-			bezeroa=bet.getBezeroa();
 			etendakoErrepikapena(bet, bezeroa);
 			bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
 			bezeroa.removeApustua(bet);
 			db.remove(bet);
 		}else{
-			bezeroa = bet.getBezeroa();
-			double komisioa = 0;
 			komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
 			double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
 			bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
@@ -739,11 +738,13 @@ public class DataAccess {
 		return igorlea;
     }
 	
-	public void errepikatu(Bezeroa nork, Bezeroa nori, double apustatukoDena, double hilabetekoMax, double komisioa){
+	
+	//ERREFAKTORIZATUTAKOA
+	public void errepikatu(Bezeroa nork, Bezeroa nori, DatuErrefaktorizatuERREPIKAPEN a){
 		Bezeroa errepikatzailea = db.find(Bezeroa.class, nork.getErabiltzaileIzena());
 		Bezeroa errepikatua = db.find(Bezeroa.class, nori.getErabiltzaileIzena());
 		db.getTransaction().begin();
-		Errepikapena errepikapenBerria = errepikatua.addErrepikatzailea(nork, apustatukoDena, hilabetekoMax, komisioa);
+		Errepikapena errepikapenBerria = errepikatua.addErrepikatzailea(nork,a);
 		errepikatzailea.addErrepikatua(errepikapenBerria);
 		db.persist(errepikapenBerria);
 		db.getTransaction().commit();

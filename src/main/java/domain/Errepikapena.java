@@ -49,6 +49,17 @@ public class Errepikapena implements Serializable{
 		this.komisioa=komisioa;
 	}
 	
+	public Errepikapena(Bezeroa nork, Bezeroa nori, DatuErrefaktorizatuERREPIKAPEN a) {
+		this.nork=nork;
+		this.nori=nori;
+		this.apustatukoDena=a.apustuko;
+		this.hilabetekoMax=a.hilabeteMax;
+		hilabeteHonetanGeratzenDena=a.hilabeteMax;
+		this.komisioa=a.komisio;
+	}
+	
+	
+	
 	public Bezeroa getNork() {
 		return nork;
 	}
