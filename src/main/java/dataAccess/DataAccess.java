@@ -40,7 +40,7 @@ import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.UserAlreadyExist;
 
-//DATU-BASEA
+//DATU-BASEA ERREFAKTORIZAZIOA
 /**
  * It implements the data access to the objectDb database
  */
