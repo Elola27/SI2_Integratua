@@ -9,6 +9,8 @@ import java.util.Vector;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceException;
+
 import domain.Pertsona;
 import domain.Admin;
 import domain.Langilea;
@@ -119,6 +121,20 @@ public class TestDataAccess {
 		return ev;
 	}
 
+	public boolean existEvent(Event ev) {
+		System.out.println(">> DataAccessTest: existEvent");
+		Event eve;
+		try {
+			eve = db.find(Event.class, ev.getEventNumber());
+		} catch (PersistenceException e) {
+			eve = null;
+		}
+		if (eve != null) {
+			return true;
+		} else
+			return false;
+	}
+
 	public boolean existQuestion(Event ev, Question q) {
 		System.out.println(">> DataAccessTest: existQuestion");
 		Event e = db.find(Event.class, ev.getEventNumber());
@@ -197,27 +213,27 @@ public class TestDataAccess {
 		System.out.println(">> DataAccessTest: addApustua");
 		Bezeroa bez = db.find(Bezeroa.class, bezero.getErabiltzaileIzena());
 		Apustua apu = null;
-		Apustua apu2=null;
-		Pronostikoa pron=null;
+		Apustua apu2 = null;
+		Pronostikoa pron = null;
 		db.getTransaction().begin();
 		try {
 			apu = bez.addApustua(pronostikoak, a, null);
 			db.persist(apu);
 			for (Pronostikoa i : pronostikoak) {
-				pron=db.find(Pronostikoa.class, i.getIdentifikadorea());
+				pron = db.find(Pronostikoa.class, i.getIdentifikadorea());
 				pron.addApustua(apu);
 			}
-			for(Errepikapena errepikapen:bez.getErrepikatzaileak()) {
-				Bezeroa nork=errepikapen.getNork();
-				apu2=nork.addApustua(pronostikoak, a, bez);
-				for (Pronostikoa i: pronostikoak) {
-					pron=db.find(Pronostikoa.class, i.getIdentifikadorea());
+			for (Errepikapena errepikapen : bez.getErrepikatzaileak()) {
+				Bezeroa nork = errepikapen.getNork();
+				apu2 = nork.addApustua(pronostikoak, a, bez);
+				for (Pronostikoa i : pronostikoak) {
+					pron = db.find(Pronostikoa.class, i.getIdentifikadorea());
 					i.addApustua(apu2);
 				}
 				db.persist(apu2);
-			}	
+			}
 			db.getTransaction().commit();
-			//System.out.println(db.getTransaction().isActive());
+			// System.out.println(db.getTransaction().isActive());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -248,9 +264,9 @@ public class TestDataAccess {
 		Bezeroa bez2 = db.find(Bezeroa.class, b.getErabiltzaileIzena());
 		db.getTransaction().begin();
 		try {
-			//Errepikapena errepikapen = bez.addErrepikatzailea(b, 1.5, 100, 0.2);
-			DatuErrefaktorizatuERREPIKAPEN c= new DatuErrefaktorizatuERREPIKAPEN(1.5,100,0.2);
-			Errepikapena errepikapen= bez.addErrepikatzailea(b,c);
+			// Errepikapena errepikapen = bez.addErrepikatzailea(b, 1.5, 100, 0.2);
+			DatuErrefaktorizatuERREPIKAPEN c = new DatuErrefaktorizatuERREPIKAPEN(1.5, 100, 0.2);
+			Errepikapena errepikapen = bez.addErrepikatzailea(b, c);
 			bez2.addErrepikatua(errepikapen);
 			db.persist(errepikapen);
 			db.getTransaction().commit();
@@ -259,7 +275,7 @@ public class TestDataAccess {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Pertsona addPertsona(String izena, String abizena1, String abizena2, String erabiltzaileIzena,
 			String pasahitza, String telefonoZbkia, String emaila, Date jaiotzeData, String mota) {
 		System.out.println(">> DataAccessTest: addPertsona");
