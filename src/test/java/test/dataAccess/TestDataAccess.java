@@ -3,6 +3,7 @@ package test.dataAccess;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
@@ -10,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import domain.Pertsona;
 import domain.Admin;
@@ -77,6 +79,19 @@ public class TestDataAccess {
 		} else
 			return false;
 	}
+	
+	public boolean removeErrepikapena(Errepikapena ev) {
+		System.out.println(">> DataAccessTest: removeEvent");
+		Errepikapena e = db.find(Errepikapena.class, ev.getIdentifikadorea());
+		if (e != null) {
+			db.getTransaction().begin();
+			db.remove(e);
+			db.getTransaction().commit();
+			System.out.println(db.getTransaction().isActive());
+			return true;
+		} else
+			return false;
+	}
 
 	public boolean removeBezeroa(Bezeroa ev) {
 		System.out.println(">> DataAccessTest: removeBezeroa");
@@ -133,6 +148,20 @@ public class TestDataAccess {
 			return true;
 		} else
 			return false;
+	}
+	
+	public Errepikapena getErrepikapena(Bezeroa a,Bezeroa b) {
+		Errepikapena e;
+		TypedQuery<Errepikapena> query = db.createQuery("SELECT b FROM Errepikapena b WHERE b.nork =?1 and b.nori=?2", Errepikapena.class);
+		query.setParameter(1,a);
+		query.setParameter(2,b);
+		List<Errepikapena> events = query.getResultList();
+		if (events.isEmpty()) {
+			e=null;
+		}else {
+			e=events.get(0);
+		}
+		return e;
 	}
 
 	public boolean existQuestion(Event ev, Question q) {
