@@ -26,7 +26,7 @@ import domain.Pertsona;
 import exceptions.UserAlreadyExist;
 
 @RunWith(MockitoJUnitRunner.class)
-class RegisterMockInt {
+public class RegisterMockInt {
 
 	DataAccess dataAccess = Mockito.mock(DataAccess.class);
 
@@ -37,7 +37,7 @@ class RegisterMockInt {
 	Bezeroa mockedBezero = Mockito.mock(Bezeroa.class);
 
 	@Test
-	void test1() {
+	public void test1() {
 
 		// definy parameters
 		try {
@@ -103,7 +103,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test2() {
+	public void test2() {
 
 		// definy parameters
 		try {
@@ -170,7 +170,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test3() {
+	public void test3() {
 
 		// definy parameters
 		try {
@@ -236,7 +236,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test4() {
+	public void test4() {
 
 		// definy parameters
 		try {
@@ -303,7 +303,7 @@ class RegisterMockInt {
 	}
 	
 	@Test
-	void test5() {
+	public void test5() {
 
 		// definy parameters
 		try {
@@ -368,7 +368,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test6() {
+public void test6() {
 
 		// definy parameters
 		try {
@@ -433,7 +433,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test7() {
+public void test7() {
 
 		// definy parameters
 		try {
@@ -498,7 +498,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test8() {
+public void test8() {
 
 		// definy parameters
 		try {
@@ -563,7 +563,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test9() {
+public void test9() {
 
 		// definy parameters
 		try {
@@ -628,7 +628,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test10() {
+public void test10() {
 
 		// definy parameters
 		try {
@@ -693,7 +693,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test11() {
+public void test11() {
 
 		// definy parameters
 		try {
@@ -758,7 +758,7 @@ class RegisterMockInt {
 	}
 
 @Test
-	void test12() {
+public void test12() {
 
 		// definy parameters
 		try {
@@ -827,7 +827,7 @@ class RegisterMockInt {
 
 
 	@Test
-	void test13() {
+	public void test13() {
 
 		// definy parameters
 		try {
@@ -898,7 +898,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test14() {
+	public void test14() {
 
 		// definy parameters
 		try {
@@ -965,7 +965,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test15() {
+	public void test15() {
 
 		// definy parameters
 		try {
@@ -1032,7 +1032,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test16() {
+	public void test16() {
 
 		// definy parameters
 		try {
@@ -1099,7 +1099,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test17() {
+	public void test17() {
 
 		// definy parameters
 		try {
@@ -1166,7 +1166,7 @@ class RegisterMockInt {
 	}
 
 	@Test
-	void test18() {
+	public void test18() {
 
 		// definy parameters
 		try {

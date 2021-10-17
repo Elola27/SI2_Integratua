@@ -19,7 +19,7 @@ import domain.Pertsona;
 import exceptions.UserAlreadyExist;
 import test.dataAccess.TestDataAccess;
 
-class RegisterDAW {
+public class RegisterDAW {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);
@@ -34,7 +34,7 @@ class RegisterDAW {
 	private Admin adm;
 
 	@Test
-	void test0() {
+	public void test0() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -81,7 +81,7 @@ class RegisterDAW {
 	}
 
 	@Test
-	void test1() {
+	public void test1() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -138,7 +138,7 @@ class RegisterDAW {
 	}
 
 	@Test
-	void test2() {
+	public void test2() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -195,7 +195,7 @@ class RegisterDAW {
 	}
 
 	@Test
-	void test3() {
+	public void test3() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -303,7 +303,7 @@ class RegisterDAW {
 //		}
 //	}
 	@Test
-	void test4() {
+	public void test4() {
 		try {
 			// define paramaters
 			String izena = "Unax";

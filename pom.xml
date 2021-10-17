@@ -27,6 +27,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<includes>
+						<include>*Int.java</include>
+						<include>*INT.java</include>
+						<include>*DAB.java</include>
+						<include>*DAW.java</include>
+					</includes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -43,7 +57,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<sonar.organization>elola27 </sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectKey>SI2_Integratua</sonar.projectKey>
-			<sonar.login>2425bc6433d4b13f8a113db613f2a7c13552db6d</sonar.login>
+		<sonar.login>2425bc6433d4b13f8a113db613f2a7c13552db6d</sonar.login>
 	</properties>
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
 	<dependencies>

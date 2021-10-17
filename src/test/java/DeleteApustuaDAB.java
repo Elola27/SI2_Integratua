@@ -17,7 +17,8 @@ import exceptions.EventFinished;
 import test.dataAccess.TestDataAccess;
 import domain.*;
 
-class DeleteApustuaDAB {
+
+public class DeleteApustuaDAB {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);
@@ -45,7 +46,7 @@ class DeleteApustuaDAB {
 	 * Double(15)); }
 	 */
 	@Test
-	void testOngiEgin() {
+	public void testOngiEgin() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date oneDate = null;
@@ -99,7 +100,7 @@ class DeleteApustuaDAB {
 	}
 	
 	@Test
-	void NullPointerException1() {
+	public void NullPointerException1() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date oneDate = null;
@@ -152,7 +153,7 @@ class DeleteApustuaDAB {
 		}
 	}
 	@Test
-	void NullPointerException2() {
+	public void NullPointerException2() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date oneDate = null;
@@ -208,7 +209,7 @@ class DeleteApustuaDAB {
 	
 
 	@Test
-	void testEventFinishedException() {
+	public void testEventFinishedException() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date oneDate = null;

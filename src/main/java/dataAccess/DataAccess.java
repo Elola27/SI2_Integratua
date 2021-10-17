@@ -740,7 +740,7 @@ public class DataAccess {
 	
 	
 	//ERREFAKTORIZATUTAKOA
-	public void errepikatu(Bezeroa nork, Bezeroa nori, DatuErrefaktorizatuERREPIKAPEN a){
+	public void errepikatu(Bezeroa nork, Bezeroa nori,DatuErrefaktorizatuERREPIKAPEN a){
 		Bezeroa errepikatzailea = db.find(Bezeroa.class, nork.getErabiltzaileIzena());
 		Bezeroa errepikatua = db.find(Bezeroa.class, nori.getErabiltzaileIzena());
 		db.getTransaction().begin();

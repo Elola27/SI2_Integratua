@@ -285,7 +285,7 @@ public class BLFacadeImplementation  implements BLFacade {
     public void errepikatu(Bezeroa nork, Bezeroa nori, double apustatukoDena, double hilabetekoMax, double komisioa) {
     	dbManager.open(false);
     	DatuErrefaktorizatuERREPIKAPEN a=new DatuErrefaktorizatuERREPIKAPEN(apustatukoDena,hilabetekoMax,komisioa);
-    	dbManager.errepikatu(nork, nori, a);
+    	dbManager.errepikatu(nork, nori,a);
     	dbManager.close();
     }
 
