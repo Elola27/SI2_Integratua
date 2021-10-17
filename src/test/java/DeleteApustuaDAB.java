@@ -40,6 +40,8 @@ public class DeleteApustuaDAB {
 	private Question q;
 	private Pronostikoa pronos;
 	private Apustua apu;
+	private Bezeroa bez2;
+	private Apustua apu2;
 
 	/*
 	 * @BeforeEach void setUp() throws Exception { bez.eguneratuDirua(new
@@ -207,6 +209,9 @@ public class DeleteApustuaDAB {
 		}
 	}
 	
+	
+	
+	
 
 	@Test
 	public void testEventFinishedException() {
@@ -246,6 +251,166 @@ public class DeleteApustuaDAB {
 
 			sut.deleteApustua(apu);
 			fail();
+		} catch (EventFinished e) {
+			System.out.println("Salbuespena jaurti du");
+			assertTrue(true);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail();
+		} finally {
+			testDA.open();
+			testDA.removeEvent(ev);
+			testDA.removeBezeroa(bez);
+			testDA.close();
+		}
+	}
+	
+	
+	//MUGA BALIOAK
+	@Test
+	public void testMuga0() {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date oneDate = null;
+			;
+			try {
+				oneDate = sdf.parse("16/09/2021");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			ArrayList<Pronostikoa> ap = new ArrayList<Pronostikoa>();
+			testDA.open();
+			bez = testDA.addBezeroa("Jon", "Smith", "Clark", "SmithClark", "ClarkSmith", "123456789", "jonsc@gmail.com",
+					new Date(2001, 8, 1));
+			ev = testDA.addEventWithQuestion("event1", oneDate, "question1", 2);
+			Vector<Question> ques = ev.getQuestions();
+			q = ques.get(0);
+			pronos = testDA.addPronostikoatoQuestion(q, "pronos1", 4);
+			ap.add(pronos);
+			bez = testDA.addApustua(ap, 4, bez);
+			apu = testDA.getBezeroApustu(bez, ap);
+			testDA.close();
+			// Apustua APU=new Apustua(4,bez,ap,null);
+			// System.out.println(apu.getBezeroa());
+			// System.out.println(bez.getApustuak());
+			// Apustua APUSTUA=bez.baduApustua(apu);
+			// if (APUSTUA==null) {
+			// System.out.println("Honaño gaizki");
+			// }
+			// System.out.println(APUSTUA.getIdentifikadorea());
+			// assertTrue(APUSTUA.getKopurua().compareTo(APU.getKopurua())==0);
+			System.out.println("Honaño ondo");
+
+			sut.deleteApustua(apu);
+			fail();
+		} catch (EventFinished e) {
+			System.out.println("Salbuespena jaurti du");
+			assertTrue(true);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail();
+		} finally {
+			testDA.open();
+			testDA.removeEvent(ev);
+			testDA.removeBezeroa(bez);
+			testDA.close();
+		}
+	}
+	@Test
+	public void testMuga1() {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date oneDate = null;
+			;
+			try {
+				oneDate = sdf.parse("17/9/2021");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			ArrayList<Pronostikoa> ap = new ArrayList<Pronostikoa>();
+			testDA.open();
+			bez = testDA.addBezeroa("Jon", "Smith", "Clark", "SmithClark", "ClarkSmith", "123456789", "jonsc@gmail.com",
+					new Date(2001, 8, 1));
+			ev = testDA.addEventWithQuestion("event1", oneDate, "question1", 2);
+			Vector<Question> ques = ev.getQuestions();
+			q = ques.get(0);
+			pronos = testDA.addPronostikoatoQuestion(q, "pronos1", 4);
+			ap.add(pronos);
+			bez = testDA.addApustua(ap, 4, bez);
+			apu = testDA.getBezeroApustu(bez, ap);
+			testDA.close();
+			// Apustua APU=new Apustua(4,bez,ap,null);
+			// System.out.println(apu.getBezeroa());
+			// System.out.println(bez.getApustuak());
+			// Apustua APUSTUA=bez.baduApustua(apu);
+			// if (APUSTUA==null) {
+			// System.out.println("Honaño gaizki");
+			// }
+			// System.out.println(APUSTUA.getIdentifikadorea());
+			// assertTrue(APUSTUA.getKopurua().compareTo(APU.getKopurua())==0);
+			System.out.println("Honaño ondo");
+
+			sut.deleteApustua(apu);
+			fail();
+		} catch (EventFinished e) {
+			System.out.println("Salbuespena jaurti du");
+			assertTrue(true);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail();
+		} finally {
+			testDA.open();
+			testDA.removeEvent(ev);
+			testDA.removeBezeroa(bez);
+			testDA.close();
+		}
+	}
+	@Test
+	public void testMuga2() {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date oneDate = null;
+			;
+			try {
+				oneDate = sdf.parse("18/09/2021");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			ArrayList<Pronostikoa> ap = new ArrayList<Pronostikoa>();
+			testDA.open();
+			bez = testDA.addBezeroa("Jon", "Smith", "Clark", "SmithClark", "ClarkSmith", "123456789", "jonsc@gmail.com",
+					new Date(2001, 8, 1));
+			ev = testDA.addEventWithQuestion("event1", oneDate, "question1", 2);
+			Vector<Question> ques = ev.getQuestions();
+			q = ques.get(0);
+			pronos = testDA.addPronostikoatoQuestion(q, "pronos1", 4);
+			ap.add(pronos);
+			bez = testDA.addApustua(ap, 4, bez);
+			apu = testDA.getBezeroApustu(bez, ap);
+			testDA.close();
+			// Apustua APU=new Apustua(4,bez,ap,null);
+			// System.out.println(apu.getBezeroa());
+			// System.out.println(bez.getApustuak());
+			// Apustua APUSTUA=bez.baduApustua(apu);
+			// if (APUSTUA==null) {
+			// System.out.println("Honaño gaizki");
+			// }
+			// System.out.println(APUSTUA.getIdentifikadorea());
+			// assertTrue(APUSTUA.getKopurua().compareTo(APU.getKopurua())==0);
+			System.out.println("Honaño ondo");
+			sut.deleteApustua(apu);
+			Apustua ezabatua = bez.baduApustua(apu);
+			System.out.println("Apustua ezabatu du");
+			assertNull(ezabatua);
 		} catch (EventFinished e) {
 			System.out.println("Salbuespena jaurti du");
 			assertTrue(true);
