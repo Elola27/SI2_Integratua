@@ -161,8 +161,6 @@ public class DeleteApustuaInt {
 			System.out.println(pronos.getIdentifikadorea());
 			bez=testBL.addApustua(ap, 4, bez);
 			apu=testBL.getBezeroApustu(bez, ap);
-			System.out.println(pronos);
-			System.out.println(ap);
 			System.out.println(apu);
 			System.out.println(apu.getPronostikoak());
 			System.out.println(testBL.getBezeroApustu(bez, ap));

@@ -215,7 +215,7 @@ public class TestDataAccess {
 					i.addApustua(apu2);
 				}
 				db.persist(apu2);
-			}		
+			}	
 			db.getTransaction().commit();
 			//System.out.println(db.getTransaction().isActive());
 		} catch (Exception e) {
