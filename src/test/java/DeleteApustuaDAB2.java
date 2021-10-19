@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import configuration.UtilDate;
 import dataAccess.DataAccess;
+import dataAccess.DataAccessDeleteApustua;
 import exceptions.EventFinished;
 import test.dataAccess.TestDataAccess;
 import domain.*;
@@ -21,7 +22,7 @@ import domain.*;
 public class DeleteApustuaDAB2 {
 
 	// sut:system under test
-	static DataAccess sut = new DataAccess(true);
+	static DataAccessDeleteApustua sut = new DataAccessDeleteApustua(true);
 
 	// additional operations needed to execute the test
 	static TestDataAccess testDA = new TestDataAccess();

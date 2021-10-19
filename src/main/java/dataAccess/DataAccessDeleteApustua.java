@@ -42,6 +42,8 @@ import exceptions.QuestionAlreadyExist;
 import exceptions.UserAlreadyExist;
 
 //DATU-BASEA ERREFAKTORIZAZIOA
+
+//2021/10/19AN SORTUA
 /**
  * It implements the data access to the objectDb database
  */
