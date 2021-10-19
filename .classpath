@@ -30,6 +30,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/SI2/objectdb-2.8.3/bin/objectdb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ehu/Desktop/objectdb-2.8.3/bin/objectdb.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

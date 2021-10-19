@@ -19,7 +19,7 @@ import test.dataAccess.TestDataAccess;
 import domain.*;
 
 //PROBA KASUAK 2
-public class DeleteApustuaDAB2 {
+public class DeleteApustua2DAB {
 
 	// sut:system under test
 	static DataAccessDeleteApustua sut = new DataAccessDeleteApustua(true);
@@ -265,7 +265,7 @@ public class DeleteApustuaDAB2 {
 			testDA.removeBezeroa(bez);
 			testDA.close();
 		}
-	}*/
+	}
 	
 	
 	//MUGA BALIOAK
