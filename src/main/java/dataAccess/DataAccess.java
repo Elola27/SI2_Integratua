@@ -24,6 +24,7 @@ import domain.ArretaMezua;
 import domain.Bezeroa;
 import domain.BezeroaContainer;
 import domain.BezeroartekoMezua;
+import domain.DatuErrefaktorizatuERREPIKAPEN;
 import domain.Errepikapena;
 import domain.ErrepikatuakContainer;
 import domain.Event;
@@ -40,7 +41,7 @@ import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.UserAlreadyExist;
 
-//DATU-BASEA
+//DATU-BASEA ERREFAKTORIZAZIOA
 /**
  * It implements the data access to the objectDb database
  */
@@ -641,25 +642,37 @@ public class DataAccess {
 			for (Pronostikoa pronostic : question.getPronostics()) {
 				for (Apustua bet : pronostic.getApustuak()) {
 					x = bet.removePronostikoa(pronostic);
-					if(x==0) {
-						etendakoApustua(bet);
-					}else{
-						apustuaKobratu(bet);
-					}
+					pronostikoKopBaldintza(x, bet);
 				}
 			}
 		}
 	}
 
 
-	private void apustuaKobratu(Apustua bet) {
-		Bezeroa bezeroa;
-		bezeroa = bet.getBezeroa();
+	private void pronostikoKopBaldintza(int x, Apustua bet) {
+		Bezeroa bezeroa=bet.getBezeroa();
 		double komisioa = 0;
-		komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
-		double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
-		bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+		if(x==0) {
+			etendakoErrepikapena(bet, bezeroa);
+			bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
+			bezeroa.removeApustua(bet);
+			db.remove(bet);
+		}else{
+			komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
+			double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
+			bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+		}
 	}
+
+
+//	private void apustuaKobratu(Apustua bet) {
+//		Bezeroa bezeroa;
+//		bezeroa = bet.getBezeroa();
+//		double komisioa = 0;
+//		komisioa = komisioaOrdaindu(bet, bezeroa, komisioa);
+//		double irabazia=bet.getKopurua()*bet.getKuotaTotala()-komisioa;
+//		bezeroa.addMugimendua("Apustua irabazi ("+bet.getIdentifikadorea()+")", irabazia, "irabazi");
+//	}
 
 
 	private double komisioaOrdaindu(Apustua bet, Bezeroa bezeroa, double komisioa) {
@@ -673,14 +686,14 @@ public class DataAccess {
 	}
 
 
-	private void etendakoApustua(Apustua bet) {
-		Bezeroa bezeroa;
-		bezeroa=bet.getBezeroa();
-		etendakoErrepikapena(bet, bezeroa);
-		bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
-		bezeroa.removeApustua(bet);
-		db.remove(bet);
-	}
+//	private void etendakoApustua(Apustua bet) {
+//		Bezeroa bezeroa;
+//		bezeroa=bet.getBezeroa();
+//		etendakoErrepikapena(bet, bezeroa);
+//		bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
+//		bezeroa.removeApustua(bet);
+//		db.remove(bet);
+//	}
 
 	//Errepikapena eten da eta hilabeteko dirua zuzendu behar da
 	private void etendakoErrepikapena(Apustua bet, Bezeroa bezeroa) {
@@ -725,11 +738,13 @@ public class DataAccess {
 		return igorlea;
     }
 	
-	public void errepikatu(Bezeroa nork, Bezeroa nori, double apustatukoDena, double hilabetekoMax, double komisioa){
+	
+	//ERREFAKTORIZATUTAKOA
+	public void errepikatu(Bezeroa nork, Bezeroa nori,DatuErrefaktorizatuERREPIKAPEN a){
 		Bezeroa errepikatzailea = db.find(Bezeroa.class, nork.getErabiltzaileIzena());
 		Bezeroa errepikatua = db.find(Bezeroa.class, nori.getErabiltzaileIzena());
 		db.getTransaction().begin();
-		Errepikapena errepikapenBerria = errepikatua.addErrepikatzailea(nork, apustatukoDena, hilabetekoMax, komisioa);
+		Errepikapena errepikapenBerria = errepikatua.addErrepikatzailea(nork,a);
 		errepikatzailea.addErrepikatua(errepikapenBerria);
 		db.persist(errepikapenBerria);
 		db.getTransaction().commit();

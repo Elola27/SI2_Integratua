@@ -13,15 +13,16 @@ import org.junit.Test;
 
 import configuration.UtilDate;
 import dataAccess.DataAccess;
+import dataAccess.DataAccessDeleteApustua;
 import exceptions.EventFinished;
 import test.dataAccess.TestDataAccess;
 import domain.*;
 
-
-public class DeleteApustuaDAB {
+//PROBA KASUAK 2
+public class DeleteApustua2DAB {
 
 	// sut:system under test
-	static DataAccess sut = new DataAccess(true);
+	static DataAccessDeleteApustua sut = new DataAccessDeleteApustua(true);
 
 	// additional operations needed to execute the test
 	static TestDataAccess testDA = new TestDataAccess();
@@ -213,7 +214,7 @@ public class DeleteApustuaDAB {
 	
 	
 
-	@Test
+	/*@Test
 	public void testEventFinishedException() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -268,7 +269,7 @@ public class DeleteApustuaDAB {
 	
 	
 	//MUGA BALIOAK
-	@Test
+	/*@Test
 	public void testMuga0() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -424,6 +425,6 @@ public class DeleteApustuaDAB {
 			testDA.removeBezeroa(bez);
 			testDA.close();
 		}
-	}
+	}*/
 
 }

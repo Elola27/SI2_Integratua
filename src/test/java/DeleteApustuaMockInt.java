@@ -27,7 +27,7 @@ import exceptions.EventFinished;
 import exceptions.QuestionAlreadyExist;
 
 @RunWith(MockitoJUnitRunner.class)
-class DeleteApustuaMockInt {
+public class DeleteApustuaMockInt {
 
 	
 	DataAccess dataAccess=Mockito.mock(DataAccess.class);
@@ -42,7 +42,7 @@ class DeleteApustuaMockInt {
 
 
 	@Test
-	void testWellDone() {
+	public void testWellDone() {
 		try {
 		//String queryText="proba galdera";
 		Float betMinimum=new Float(2);
@@ -82,7 +82,7 @@ class DeleteApustuaMockInt {
 		}
 	}
 	@Test
-	void testEventFinished() {
+	public void testEventFinished() {
 		try {
 		//String queryText="proba galdera";
 		Float betMinimum=new Float(2);
@@ -124,7 +124,7 @@ class DeleteApustuaMockInt {
 	}
 	
 	@Test
-	void testNullApustu() {
+	public void testNullApustu() {
 		try {
 		//String queryText="proba galdera";
 		Float betMinimum=new Float(2);
@@ -166,7 +166,7 @@ class DeleteApustuaMockInt {
 	}
 	
 	@Test
-	void testNotInDB() {
+	public void testNotInDB() {
 		try {
 		//String queryText="proba galdera";
 		Float betMinimum=new Float(2);

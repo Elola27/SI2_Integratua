@@ -20,7 +20,7 @@ import exceptions.EventFinished;
 import exceptions.QuestionAlreadyExist;
 import test.businessLogic.TestFacadeImplementation;
 import domain.*;
-public class DeleteApustuaIntegrazioa {
+public class DeleteApustuaInt {
 	 static BLFacadeImplementation sut;
 	 static TestFacadeImplementation testBL;
 
@@ -137,12 +137,12 @@ public class DeleteApustuaIntegrazioa {
 		           System.out.println("Finally "+b);          
 		        }
 		   }
-	/*@Test
+	@Test
 	public void testONA() {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date oneDate=null;;
-			ap= new ArrayList<>();
+			Date oneDate=null;
+			ap= new ArrayList<Pronostikoa>();
 			try {
 				oneDate = sdf.parse("05/10/2022");
 			} catch (ParseException e) {
@@ -156,12 +156,11 @@ public class DeleteApustuaIntegrazioa {
 			q=ev.getQuestions().get(0);
 			System.out.println(q.getEvent());
 			pronos=testBL.addPronostikoatoQuestion(q, "pronostic1", 2);
+			System.out.println(pronos);
 			ap.add(pronos);
 			System.out.println(pronos.getIdentifikadorea());
 			bez=testBL.addApustua(ap, 4, bez);
 			apu=testBL.getBezeroApustu(bez, ap);
-			System.out.println(pronos);
-			System.out.println(ap);
 			System.out.println(apu);
 			System.out.println(apu.getPronostikoak());
 			System.out.println(testBL.getBezeroApustu(bez, ap));
@@ -175,7 +174,7 @@ public class DeleteApustuaIntegrazioa {
 			testBL.removeEvent(ev);
 			//testBL.removeApustua(apu);
 		}
-	}*/
+	}
 	
 	
 }

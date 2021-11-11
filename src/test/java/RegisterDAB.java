@@ -19,7 +19,7 @@ import domain.Pertsona;
 import exceptions.UserAlreadyExist;
 import test.dataAccess.TestDataAccess;
 
-class RegisterDAB {
+public class RegisterDAB {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);
@@ -33,7 +33,7 @@ class RegisterDAB {
 	private Admin adm;
 
 	@Test
-	void test1() {
+	public void test1() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -90,7 +90,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test2() {
+	public void test2() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -147,7 +147,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test3() {
+	public void test3() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -204,7 +204,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test4() {
+	public void test4() {
 		try {
 			// define paramaters
 			String izena = null;
@@ -254,7 +254,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test5() {
+	public void test5() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -304,7 +304,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test6() {
+	public void test6() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -361,7 +361,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test7() {
+	public void test7() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -411,7 +411,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test8() {
+	public void test8() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -461,7 +461,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test9() {
+	public void test9() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -511,7 +511,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test10() {
+	public void test10() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -561,7 +561,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test11() {
+	public void test11() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -611,7 +611,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test12() {
+	public void test12() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -670,7 +670,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test13() {
+	public void test13() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -720,7 +720,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test14() {
+	public void test14() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -770,7 +770,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test15() {
+	public void test15() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -820,7 +820,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test16() {
+	public void test16() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -870,7 +870,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test17() {
+	public void test17() {
 		try {
 			// define paramaters
 			String izena = "Unax";
@@ -920,7 +920,7 @@ class RegisterDAB {
 	}
 
 	@Test
-	void test18() {
+	public void test18() {
 		try {
 			// define paramaters
 			String izena = "Unax";

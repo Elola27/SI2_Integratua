@@ -22,7 +22,7 @@ import domain.Question;
 import exceptions.EventFinished;
 import test.dataAccess.TestDataAccess;
 
-class DeleteApustuaDAW {
+public class DeleteApustuaDAW {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);
@@ -42,7 +42,7 @@ class DeleteApustuaDAW {
 	
 
 	@Test
-	void testEventFinished() {
+	public void testEventFinished() {
 		try {
 			System.out.println("TEST EVENT FINISHED");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -86,7 +86,7 @@ class DeleteApustuaDAW {
 	}
 	
 	@Test
-	void testOngiEgin2() {
+	public void testOngiEgin2() {
 		try {
 			System.out.println("TEST ONGI EGIN 2");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -152,7 +152,7 @@ class DeleteApustuaDAW {
 	}
 	
 	@Test
-	void testOngiEgin3() {
+	public void testOngiEgin3() {
 		try {
 			System.out.println("TEST ONGI EGIN 3");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -206,7 +206,7 @@ class DeleteApustuaDAW {
 	}
 	
 	@Test
-	void testOngiEgin4() {
+	public void testOngiEgin4() {
 		try {
 			System.out.println("TEST ONGI EGIN 3");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
