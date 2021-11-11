@@ -28,6 +28,7 @@ public class MainGUI extends JFrame {
 	private JPanel jContentPane = null;
 	private JButton jButtonCreateQuery = null;
 	private JButton jButtonQueryQueries = null;
+	JButton jButtonIkusiApustuak = null;
 
     private static BLFacade appFacadeInterface;
 	
@@ -88,8 +89,9 @@ public class MainGUI extends JFrame {
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
-			jContentPane.setLayout(new GridLayout(4, 1, 0, 0));
+			jContentPane.setLayout(new GridLayout(6, 1, 0, 0));
 			jContentPane.add(getLblNewLabel());
+			jContentPane.add(getBoton4());
 			jContentPane.add(getBoton3());
 			jContentPane.add(getBoton2());
 			jContentPane.add(getPanel());
@@ -136,6 +138,19 @@ public class MainGUI extends JFrame {
 		return jButtonQueryQueries;
 	}
 	
+	private JButton getBoton4() {
+		if (jButtonIkusiApustuak == null) {
+			jButtonIkusiApustuak = new JButton();
+			jButtonIkusiApustuak.setText("Ikusi apustuak");
+			jButtonIkusiApustuak.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					JFrame a = new JTableAdapter();
+					a.setVisible(true);
+				}
+			});
+		}
+		return jButtonIkusiApustuak;
+	}
 
 	private JLabel getLblNewLabel() {
 		if (jLabelSelectOption == null) {

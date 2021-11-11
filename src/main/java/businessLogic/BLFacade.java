@@ -17,6 +17,7 @@ import domain.BezeroaContainer;
 import domain.Errepikapena;
 import domain.ErrepikatuakContainer;
 import domain.Event;
+import domain.ExtendedIterator;
 import domain.Langilea;
 import domain.Mezua;
 import domain.Pertsona;
@@ -169,4 +170,6 @@ public interface BLFacade  {
 	@WebMethod public void jarraitzeariUtzi(Errepikapena errepikapena);
 		 
 	@WebMethod public ArrayList<ErrepikatuakContainer> getErrepikapenak(Bezeroa bezeroa);
+	
+	@WebMethod public ExtendedIterator<Event> getEventsIterator(Date date);
 }

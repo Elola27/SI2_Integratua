@@ -18,6 +18,8 @@ import domain.BezeroaContainer;
 import domain.Errepikapena;
 import domain.ErrepikatuakContainer;
 import domain.Event;
+import domain.ExtendedIterator;
+import domain.ExtendedIteratorEvents;
 import domain.Langilea;
 import domain.Mezua;
 import domain.Pertsona;
@@ -399,6 +401,10 @@ public class BLFacadeImplementation  implements BLFacade {
 		ArrayList<ErrepikatuakContainer> errepikapenak = dbManager.getErrepikapenak(bezeroa);
 		dbManager.close();
 		return errepikapenak;
+	}
+
+	public ExtendedIterator<Event> getEventsIterator(Date date) {
+		return new ExtendedIteratorEvents(getEvents(date));
 	}
 }
 

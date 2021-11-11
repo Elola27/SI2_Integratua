@@ -12,6 +12,7 @@ import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
+import businessLogic.Factory;
 
 public class ApplicationLauncher { 
 	
@@ -42,15 +43,14 @@ public class ApplicationLauncher {
 				
 
 				//In this option, you can parameterize the DataAccess (e.g. a Mock DataAccess object)
-
-				DataAccess da= new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
-				appFacadeInterface=new BLFacadeImplementation(da);
-
 				
+				DataAccess da= new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
+				/*appFacadeInterface=new BLFacadeImplementation(da);*/
+				appFacadeInterface=Factory.createBLFacade(0);
 			}
 			
 			else { //If remote
-				
+				/*
 				 String serviceName= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName()+"?wsdl";
 				 
 				
@@ -64,7 +64,8 @@ public class ApplicationLauncher {
 		 
 		        Service service = Service.create(url, qname);
 
-		         appFacadeInterface = service.getPort(BLFacade.class);
+		         appFacadeInterface = service.getPort(BLFacade.class);*/
+				appFacadeInterface=Factory.createBLFacade(1);
 			} 
 			MainGUI.setBussinessLogic(appFacadeInterface);
 
