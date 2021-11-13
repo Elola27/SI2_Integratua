@@ -171,5 +171,5 @@ public interface BLFacade  {
 		 
 	@WebMethod public ArrayList<ErrepikatuakContainer> getErrepikapenak(Bezeroa bezeroa);
 	
-	@WebMethod public ExtendedIterator<Event> getEventsIterator(Date date);
+	public ExtendedIterator<Event> getEventsIterator(Date date);
 }

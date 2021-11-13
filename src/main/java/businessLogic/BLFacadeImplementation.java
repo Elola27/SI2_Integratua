@@ -407,6 +407,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		return errepikapenak;
 	}
 
+	
 	public ExtendedIterator<Event> getEventsIterator(Date date) {
 		return new ExtendedIteratorEvents(getEvents(date));
 	}

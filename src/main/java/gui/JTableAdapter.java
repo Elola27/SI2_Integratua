@@ -89,11 +89,8 @@ public class JTableAdapter extends JFrame {
 		getContentPane().add(taula,BorderLayout.CENTER);*/
 	
 		BezeroErregistratuAdapter adaptadorea=new BezeroErregistratuAdapter(user.getApustuak());
-		
 		//taula=new JTable(adaptadorea);
-		taula=new JTable();
-		taula.setModel(new DefaultTableModel(null,columnNamesApustuak));
-		//taula.setUI(adaptadorea);
+		taula=new JTable(adaptadorea);
 		taula.setBounds(80,80, 250, 300);
 		getContentPane().add(taula,BorderLayout.CENTER);
 

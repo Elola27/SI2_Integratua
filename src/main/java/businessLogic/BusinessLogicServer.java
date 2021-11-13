@@ -121,7 +121,7 @@ public class BusinessLogicServer extends JDialog {
 			}
 			
 			textArea.append("Running service at:\n\t" + service);
-			textArea.append("\n\n\nPress button to exit this server... ");
+			textArea.append("\n\n\nPress button to exit this server... "); 
 			
 		  } catch (Exception e) {
 			textArea.append(e.toString());

@@ -2,6 +2,10 @@ package domain;
 
 import java.util.Iterator;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+@XmlAccessorType(XmlAccessType.FIELD) 
 public interface ExtendedIterator<Object> extends Iterator<Object>{
 	//uneko elementua itzultzen du eta aurrekora pasatzen da
 	public Object previous();
